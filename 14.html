@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi San Valentín ❤️</title>
+    <link rel="stylesheet" href="14.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+
+    <div class="background-hearts" id="background-hearts"></div>
+
+    <header class="hero-section">
+        <h1 class="main-title">Feliz San Valentín, Mi Amor 🤍</h1>
+        <p class="subtitle">TE AMO</p>
+
+        <div id="love-stopwatch" class="love-stopwatch fade-in">
+            <div class="time-unit">
+                <span id="years">0</span>
+                <p>Años</p>
+            </div>
+            <div class="time-unit">
+                <span id="months">0</span>
+                <p>Meses</p>
+            </div>
+            <div class="time-unit">
+                <span id="days">0</span>
+                <p>Días</p>
+            </div>
+            <div class="time-unit">
+                <span id="hours">0</span>
+                <p>Horas</p>
+            </div>
+            <div class="time-unit">
+                <span id="minutes">0</span>
+                <p>Minutos</p>
+            </div>
+            <div class="time-unit">
+                <span id="seconds">0</span>
+                <p>Segundos</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section id="memory-lane" class="card fade-in">
+            <h2>📸 Nuestras Fotos</h2>
+            <p>Elige un mes y un año para recordar ese momento especial.</p>
+
+            <div class="date-selector">
+                <select id="month-select">
+                    <option value="" selected disabled>Mes</option>
+                    <option value="01">Enero</option>
+                    <option value="02">Febrero</option>
+                    <option value="03">Marzo</option>
+                    <option value="04">Abril</option>
+                    <option value="05">Mayo</option>
+                    <option value="06">Junio</option>
+                    <option value="07">Julio</option>
+                    <option value="08">Agosto</option>
+                    <option value="09">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+                <select id="year-select">
+                    <option value="" selected disabled>Año</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                </select>
+            </div>
+
+            <div class="photo-display">
+                <div id="empty-state" class="empty-state">
+                    <span class="heart-pulse">❤️</span>
+                    <p>Selecciona una fecha</p>
+                </div>
+                <img id="memory-photo" src="" alt="Nuestro recuerdo" style="display: none;">
+                <p id="photo-caption" class="caption" style="display: none;"></p>
+            </div>
+        </section>
+
+
+        <section id="ten-things" class="card fade-in">
+            <h2>🌹 10 Cosas que Amo de Ti</h2>
+            <ul class="love-list">
+                <li><span class="heart-bullet">🤍</span> 1. Tu sonrisa</li>
+                <li><span class="heart-bullet">🤍</span> 2. Tu forma de tratarme</li>
+                <li><span class="heart-bullet">🤍</span> 3. Tu risa</li>
+                <li><span class="heart-bullet">🤍</span> 4. Tu inteligencia</li>
+                <li><span class="heart-bullet">🤍</span> 5. Tu mirada</li>
+                <li><span class="heart-bullet">🤍</span> 6. Tu manera de ser(aunque seas muy enfadica)</li>
+                <li><span class="heart-bullet">🤍</span> 7. Tus besos</li>
+                <li><span class="heart-bullet">🤍</span> 8. Tus abrazos</li>
+                <li><span class="heart-bullet">🤍</span> 9. Tu cuerpo</li>
+                <li><span class="heart-bullet">🤍</span> 10. Tu forma de hacerme sentir que me amas</li>
+            </ul>
+        </section>
+
+        <section id="minigame" class="card fade-in">
+            <h2>🔥 Mantén encendida la llama</h2>
+            <p>Atrapa los corazones para que nuestro amor no se apague.</p>
+
+            <div class="game-container">
+                <div class="game-info">
+                    <div class="score-board">Puntos: <span id="score">0</span></div>
+                    <div class="love-meter-wrapper">
+                        <span>Amor:</span>
+                        <div class="love-meter-bg">
+                            <div id="love-meter" class="love-meter-fill" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="game-area" class="game-area">
+                    <div id="player" class="player">🤲</div>
+
+                    <div id="start-screen" class="game-overlay">
+                        <h3 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">¿Listo?</h3>
+                        <button id="start-btn" class="btn-love">Jugar</button>
+                    </div>
+
+                    <div id="game-over-screen" class="game-overlay" style="display: none;">
+                        <h3 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">¡Fin del Juego!</h3>
+                        <p style="color: white; font-weight: bold;">Puntuación: <span id="final-score">0</span></p>
+                        <button id="restart-btn" class="btn-love">Otra vez</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="history" class="card fade-in">
+            <h2>📜 El Origen de San Valentín</h2>
+            <div class="history-content">
+                <p>
+                    La historia de San Valentín se remonta al siglo III en Roma. El emperador Claudio II prohibió los
+                    matrimonios para los jóvenes soldados, creyendo que los hombres solteros eran mejores combatientes.
+                </p>
+                <p>
+                    Valentín, un sacerdote que creía en el amor, desafió al emperador y continuó casando parejas en
+                    secreto. Cuando fue descubierto, fue encarcelado y sentenciado a muerte el 14 de febrero.
+                    Se dice que antes de su ejecución, envió una carta a la hija del carcelero de quien se había
+                    enamorado, firmándola: <strong>"De tu Valentín"</strong>.
+                </p>
+            </div>
+            <div class="valentine-signature-box">
+                <p class="signature-text">"De tu Valentín"</p>
+                <span class="signature-icon">❦</span>
+            </div>
+        </section>
+
+        <section id="letter" class="card fade-in">
+            <h2>💌 Escríbeme algo...</h2>
+            <p>Déjame una frase que te recuerde a mi.</p>
+            <form id="love-letter-form">
+                <textarea class="love-textarea" placeholder="Escribe aquí..."></textarea>
+                <button type="button" class="btn-love" onclick="alert('¡Gracias mi vida! 🤍')">Enviar
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Hecho por tu novio que te ama mucho</p>
+    </footer>
+
+    <script src="14.js"></script>
+</body>
+
+</html>
