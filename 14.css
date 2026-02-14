@@ -334,24 +334,19 @@ footer {
     letter-spacing: 1px;
 }
 
-/* Nuevo estilo para la firma */
 .valentine-signature-box {
     background-color: #fff5f8;
-    /* Un rosa muy pálido tipo papel */
     border: 2px dashed var(--primary-color);
-    /* Borde discontinuo tipo sello */
     padding: 1.5rem;
     margin-top: 2rem;
     border-radius: 12px;
     position: relative;
     box-shadow: var(--shadow);
     transform: rotate(-1deg);
-    /* Un ligero giro para que parezca hecho a mano */
 }
 
 .signature-text {
     font-family: var(--font-heading);
-    /* Usamos tu fuente elegante */
     font-size: 2.5rem;
     color: var(--accent-color);
     margin: 0;
@@ -364,7 +359,6 @@ footer {
     margin-top: 10px;
 }
 
-/* Mini Game */
 .game-container {
     margin-top: 1rem;
     position: relative;
@@ -414,7 +408,6 @@ footer {
     overflow: hidden;
     cursor: pointer;
     touch-action: none;
-    /* Prevent scrolling on mobile while playing */
 }
 
 .player {
@@ -429,8 +422,7 @@ footer {
 .falling-heart {
     position: absolute;
     font-size: 2rem;
-    /* top: -50px; Will be controlled by JS */
-    /* animation: fall linear forwards; REMOVED to avoid conflict with JS */
+
     z-index: 5;
 }
 
@@ -449,7 +441,7 @@ footer {
     border-radius: 13px;
 }
 
-/* Mobile Adjustments */
+
 @media (max-width: 600px) {
     h1 {
         font-size: 2.5rem;

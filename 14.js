@@ -250,7 +250,7 @@ function setupLoveGame() {
         if (!isPlaying) return;
         const heart = document.createElement('div');
         heart.classList.add('falling-heart');
-        heart.innerHTML = '❤️';
+        heart.innerHTML = '🤍';
         heart.style.left = Math.random() * (gameArea.clientWidth - 30) + 'px';
         heart.style.top = '-40px';
         gameArea.appendChild(heart);
@@ -293,6 +293,10 @@ function setupLoveGame() {
                 createSparkle(heartRect.left, heartRect.top);
                 heart.remove();
 
+                if (score >= 10) {
+                    gameWin();
+                    return;
+                }
 
                 if (score % 5 === 0) {
                     gameSpeed += 0.2;
@@ -306,7 +310,9 @@ function setupLoveGame() {
             }
         });
 
-        animationId = requestAnimationFrame(gameLoop);
+        if (isPlaying) {
+            animationId = requestAnimationFrame(gameLoop);
+        }
     }
 
     function updateLoveMeter() {
@@ -330,11 +336,21 @@ function setupLoveGame() {
         setTimeout(() => sparkle.remove(), 1000);
     }
 
+    function gameWin() {
+        isPlaying = false;
+        clearInterval(spawnInterval);
+        cancelAnimationFrame(animationId);
+        finalScoreEl.textContent = score;
+        gameOverScreen.querySelector('h3').textContent = "¡Ganaste! 🤍";
+        gameOverScreen.style.display = 'flex';
+    }
+
     function gameOver() {
         isPlaying = false;
         clearInterval(spawnInterval);
         cancelAnimationFrame(animationId);
         finalScoreEl.textContent = score;
+        gameOverScreen.querySelector('h3').textContent = "¡Fin del Juego!";
         gameOverScreen.style.display = 'flex';
     }
 
