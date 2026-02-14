@@ -11,7 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
     setupLoveStopwatch();
 
 
+    setupLoveStopwatch();
+
     setupLoveGame();
+
+    setupWelcomeScreen();
 });
 
 function createFallingHearts() {
@@ -364,4 +368,18 @@ function setupLoveGame() {
         e.preventDefault();
         movePlayer(e);
     }, { passive: false });
+}
+
+function setupWelcomeScreen() {
+    const welcomeScreen = document.getElementById('welcome-screen');
+    const welcomeBtn = document.getElementById('welcome-btn');
+
+    if (welcomeBtn && welcomeScreen) {
+        welcomeBtn.addEventListener('click', () => {
+            welcomeScreen.classList.add('hidden');
+            // Optional: Play music here if you add it later
+            // const audio = document.getElementById('background-music');
+            // if (audio) audio.play();
+        });
+    }
 }
