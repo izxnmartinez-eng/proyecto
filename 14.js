@@ -106,7 +106,7 @@ function setupMemoryLane() {
         photo.style.display = 'block';
         caption.style.display = 'block';
 
-        const imagePath = `images/${year}-${month}.jpg`;
+        const imagePath = `images/${year}-${month}.JPG`;
         const altText = `Foto de ${month}/${year}`;
 
         photo.src = imagePath;
