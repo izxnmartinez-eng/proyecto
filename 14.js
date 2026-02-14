@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
 
     createFallingHearts();
@@ -116,7 +115,7 @@ function setupMemoryLane() {
 
         photo.onerror = function () {
 
-            this.src = `https://placehold.co/600x400/pink/white?text=Sube+foto+a+images/${year}-${month}.jpg`;
+            this.src = `https://placehold.co/600x400/pink/white?text=Sube+foto+a+images/${year}-${month}.JPG`;
             caption.textContent = `Aún no has subido la foto para ${getMonthName(month)} ${year} 📸`;
         };
     }
@@ -377,9 +376,6 @@ function setupWelcomeScreen() {
     if (welcomeBtn && welcomeScreen) {
         welcomeBtn.addEventListener('click', () => {
             welcomeScreen.classList.add('hidden');
-            // Optional: Play music here if you add it later
-            // const audio = document.getElementById('background-music');
-            // if (audio) audio.play();
         });
     }
 }
